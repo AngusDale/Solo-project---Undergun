@@ -27,6 +27,7 @@ public class weapon : MonoBehaviour {
     
     void Shoot()
     {
+        animator.SetTrigger("Shoot");
         bulletsFired++;
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         //print(bulletsFired);
