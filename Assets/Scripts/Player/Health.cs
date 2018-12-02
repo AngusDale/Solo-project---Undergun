@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
         
     /*
-    I initially found this in a blackthorne prod tutorial (the code at the bottom of this script). However I changed it to be a series of if statements which helped me
-    understand it better. I also had a bug where the player would die but it would still show them as having one heart of health. This happened because I attached 
-    this script to the player game object. That meant that when I deactivated the player, the script wouldn't be able to finish. I solved this by attaching 
-    this script to the Canvas which contains my heart sprites.
+    I initially found this in a blackthorn prod tutorial (the commented code at the bottom of this script). 
+    However I changed it to be a series of if statements which helped me understand it better. 
+    I also had a bug where the player would die but it would still show them as having one heart of health. 
+    This happened because I attached this script to the player game object. That meant that when I deactivated the player, 
+    the script wouldn't be able to finish. I solved this by attaching this script to the Canvas which contains my heart sprites.
     */
 
     public GameObject player;

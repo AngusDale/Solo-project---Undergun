@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-    //This sound manager was found in a youtube tutorial by Alexander Zotov. I've put in all my own sounds and have called them from different scripts when necessary.
+    //This sound manager was found in a youtube tutorial by Alexander Zotov. 
+    //I've put in all my own sounds and have called them from different scripts when necessary.
 
     public static AudioClip ghostHit, bulletHits, enemyDamaged1, enemyDamaged2, enemyDamaged3, enemyDies, jump1, jump2, jump3, playerDies, shootBullet, takeDamage;
     static AudioSource source;
@@ -12,7 +13,7 @@ public class SoundManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        //This is assigning a sound from my resources folder to a variable that we assign above.
+        //This is assigning a sound from my resources folder to a variable that we establish above.
         
         ghostHit = Resources.Load<AudioClip>("Ghost hit");
         bulletHits = Resources.Load<AudioClip>("Bullet hits");

@@ -10,6 +10,7 @@ public class Patrol : MonoBehaviour {
 
     public float enemySpeed;
 
+    //On start it is randomised as to which direction the enemy will start moving in.
     private void Start()
     {
         if (Random.Range(0, 2) == 0)
@@ -25,6 +26,7 @@ public class Patrol : MonoBehaviour {
         transform.Translate(Vector2.right * enemySpeed * Time.deltaTime);        
     }
 
+    //If the enemy collides with a player, another enemy or a wall, they will change direction.
     void OnCollisionEnter2D(Collision2D collision)
     {
         if( collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "wall")
@@ -33,6 +35,8 @@ public class Patrol : MonoBehaviour {
         }        
     }
 
+    //If an enemy collides with a transporter it will be teleported to the top of the screen. This prevents an enemy lock up, and keeps the 
+    //enemies moving.
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Transporter 1")
@@ -45,6 +49,7 @@ public class Patrol : MonoBehaviour {
         }
     }
 
+    //Flips the gameobject 180 on the x axis.
     public void ChangeDirection()
     {   
         transform.Rotate(0f, 180f, 0f);

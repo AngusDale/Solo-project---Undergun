@@ -17,7 +17,7 @@ public class GhostSpawner : MonoBehaviour {
     public bool SpawnGhosts = true;
     
 
-    // Update is called once per frame
+    //This is the timer that controls the spawn interval.
     void Update () {
         if (SpawnGhosts == true && Time.time > nextSpawn)
         {
@@ -29,6 +29,7 @@ public class GhostSpawner : MonoBehaviour {
 
     }
 
+    //This function randomises the spawner that the Ghost will spawn at using a number generator.
     void SpawnGhost()
     {
         spawner = Random.Range(0, 3);

@@ -30,9 +30,12 @@ public class Score : MonoBehaviour {
 
         scoreNum = killScore * health;
 
+        //This will call the GameWon function which calls the YouWon function inside the MenuManager script 
+        //displays the YouWon game object when the game is won.
+
         if (killCount >= spawner.waveSize)
         {
-            print("GAME WON SCORENUM: " + scoreNum);
+            //print("GAME WON SCORENUM: " + scoreNum);
             GameWon();
         }
     }
@@ -42,7 +45,7 @@ public class Score : MonoBehaviour {
         MenuManager MM = Menu.GetComponent<MenuManager>();
         Spawner spawner = spawn.GetComponent<Spawner>();
                        
-        print("Wave size " + spawner.waveSize);
+        //print("Wave size " + spawner.waveSize);
                 
         MM.YouWon();
         ChangeText();

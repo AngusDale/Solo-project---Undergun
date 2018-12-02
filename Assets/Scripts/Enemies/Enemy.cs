@@ -21,12 +21,16 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
+        /*On start I am instatiating the spawn particles and setting the health to a random value between the HealthMin and max values that are 
+         * set in the inspector. It also finds the gameobject with the tag "Screenshake" which contains the screen shake animations.*/
         print("points value " + pointsValue);
         Instantiate(spawnParticles, transform.position, transform.rotation);
         health = Random.Range(healthMin, healthMax + 1);
         camShake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();        
     }
 
+    //This function will deduct 1 from the enemy's health. If that causes health to equal 0 then the enemy will die. Else it will play the 
+    //damage sound
     public void EnemyDamaged(int bulletdamage)
     {       
         health -= bulletdamage;
@@ -42,6 +46,8 @@ public class Enemy : MonoBehaviour
         }       
     }    
 
+    /* This function will add the points value of the enemy that is killed to the killScore in the score script. It will also add 1 to the kill
+     count in the score script. It does this so the score script knows when to call the GameWon function.*/
     void KillEnemy()
     {
         FindObjectOfType<Score>().killScore += pointsValue;

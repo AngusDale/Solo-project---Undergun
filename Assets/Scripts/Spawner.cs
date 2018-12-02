@@ -44,6 +44,9 @@ public class Spawner : MonoBehaviour {
         }
     }
     
+    //This will spawn Small, medium and large enemies at a ratio of 10:3:1. To acomplish this I set different if statement parameters for each 
+    //enemy along with a random number generator. This function will also change the spawn rate after a certain number of enemies has spawned
+    //in order to create a very simple negative feedback loop. I.e. if the player is doing better, the game gets harder.
     void SpawnWave()
     {
         enemySize = Random.Range(0, 15);
@@ -75,9 +78,10 @@ public class Spawner : MonoBehaviour {
        
     }
     
+    
     void SpawnSmall()
     {
-        /*I'm using a random number generator to randomly choose a spawner. */
+        //I'm using a random number generator to randomly choose a spawner in which to spawn an enemy at. 
                 
         spawner = Random.Range(0, 5);
         if      (spawner == 0) { Instantiate(SEnemy, spawnPoint3.position, spawnPoint3.rotation); }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    //Blackthorne prod transition tutorial.
+    //Blackthorn prod transition tutorial. And brackeys main menu tutorial.
     public Animator transAnimation;
     public string gameScene;
     public string menuScene;

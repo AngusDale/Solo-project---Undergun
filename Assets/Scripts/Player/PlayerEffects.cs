@@ -91,6 +91,8 @@ public class PlayerEffects : MonoBehaviour
         }
     } 
 
+    //This function calls the GameOver function in the MenuManager script. Then plays the death sound, then shakes the camrea, instatiates 
+    //particles, and finall sets the gameobject to inactive.
     void Die()
     {
         FindObjectOfType<MenuManager>().GameOver();
