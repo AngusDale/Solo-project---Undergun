@@ -4262,7 +4262,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 222981556
+  randomSeed: 130570196
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7601,7 +7601,7 @@ MonoBehaviour:
   spawning: 1
   primarySpawnRate: 1.25
   secondarySpawnRate: 0.5
-  waveSize: 15
+  waveSize: 50
 --- !u!4 &1772871207
 Transform:
   m_ObjectHideFlags: 0
