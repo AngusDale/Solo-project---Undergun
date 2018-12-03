@@ -30,15 +30,17 @@ public class MenuManager : MonoBehaviour {
 
     public void YouWon()
     {
+        PlayerEffects PE = player.GetComponent<PlayerEffects>();
         PlayerController PC = player.GetComponent<PlayerController>();
         PC.canMove = false;
+        PE.invincible = true;        
         youWon.SetActive(true);
     }
 
     public void Quit()
     {
         Application.Quit();
-        print("QUIT");
+        //print("QUIT");
     }
 
     IEnumerator StartLoad()

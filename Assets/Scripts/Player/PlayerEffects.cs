@@ -10,7 +10,8 @@ public class PlayerEffects : MonoBehaviour
      without getting hit again. To solve this I added a bool variable called canTakeDamage. Read more about that above the PlayerTakeDamage function.*/
 
     public int playerHealth;
-    private bool canTakeDamage;
+    [HideInInspector]
+    public bool canTakeDamage = true;
     float waitTime = 0f; 
     public GameObject deathParticles;
 

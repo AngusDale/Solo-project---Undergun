@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         /*On start I am instatiating the spawn particles and setting the health to a random value between the HealthMin and max values that are 
          * set in the inspector. It also finds the gameobject with the tag "Screenshake" which contains the screen shake animations.*/
-        print("points value " + pointsValue);
+        //print("points value " + pointsValue);
         Instantiate(spawnParticles, transform.position, transform.rotation);
         health = Random.Range(healthMin, healthMax + 1);
         camShake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();        

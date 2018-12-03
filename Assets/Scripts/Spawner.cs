@@ -53,9 +53,9 @@ public class Spawner : MonoBehaviour {
         //print(enemySize);
         if (enemyInterval <= 0 && enemyNumber < waveSize)
         {
-            if     (enemySize == 0)                 { SpawnLarge(); print("Spawned large"); }
-            else if(enemySize > 0 && enemySize < 4) { SpawnMedium(); print("Spawned medium"); }
-            else if(enemySize >= 4)                 { SpawnSmall(); print("Spawned small"); }
+            if     (enemySize == 0)                 { SpawnLarge(); }
+            else if(enemySize > 0 && enemySize < 4) { SpawnMedium(); }
+            else if(enemySize >= 4)                 { SpawnSmall(); }
             
             enemyNumber++;
             if (enemyNumber < changeRate)
