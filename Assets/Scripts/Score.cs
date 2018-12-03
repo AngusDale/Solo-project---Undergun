@@ -42,11 +42,7 @@ public class Score : MonoBehaviour {
 
     void GameWon()
     {
-        MenuManager MM = Menu.GetComponent<MenuManager>();
-        Spawner spawner = spawn.GetComponent<Spawner>();
-                       
-        //print("Wave size " + spawner.waveSize);
-                
+        MenuManager MM = Menu.GetComponent<MenuManager>();                
         MM.YouWon();
         ChangeText();
     }
