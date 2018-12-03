@@ -13,6 +13,11 @@ public class MenuManager : MonoBehaviour {
     public GameObject youWon;
     public GameObject player;
 
+    void Start()
+    {
+        PlayerPrefs.SetInt("Screenmanager Is Fullscreen mode", 0);
+    }
+
     public void Menu()
     {
         StartCoroutine(MenuLoad());
