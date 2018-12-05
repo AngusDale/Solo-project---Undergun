@@ -17,7 +17,6 @@ public class Bullet : MonoBehaviour {
     public GameObject bulletBurst;
 	// Use this for initialization
 	void Start () {
-        SoundManager.PlayAudio("Shoot Bullet");
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * bulletSpeed;
 
@@ -35,8 +34,7 @@ public class Bullet : MonoBehaviour {
         {
             CamShake();
             enemy.EnemyDamaged(bulletDamage);
-        } 
-        SoundManager.PlayAudio("Bullet hits");
+        }
         Instantiate(bulletBurst, transform.position, transform.rotation);
         Destroy(gameObject);
     }
@@ -45,4 +43,7 @@ public class Bullet : MonoBehaviour {
     {
         camShake.BulletShake();        
     }
+
+    
+
 }

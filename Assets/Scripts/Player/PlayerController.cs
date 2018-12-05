@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove == true)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow)) { animator.SetBool("Jumping", true); }
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) { animator.SetBool("Jumping", true); }
 
             if (OnFloor == true)
             {
@@ -89,12 +89,12 @@ public class PlayerController : MonoBehaviour
                 addedJumpNum = addedJumpNumInspector;
             }
 
-            if (OnFloor == true && Input.GetKeyDown(KeyCode.UpArrow))
+            if (OnFloor == true && Input.GetKeyDown(KeyCode.UpArrow) || OnFloor == true && Input.GetKeyDown(KeyCode.W))
             {
 
                 SoundManager.PlayAudio("Jump 1");
             }
-            if (OnFloor == false && usedSound == false && Input.GetKeyDown(KeyCode.UpArrow))
+            if (OnFloor == false && usedSound == false && Input.GetKeyDown(KeyCode.UpArrow) || OnFloor == false && usedSound == false && Input.GetKeyDown(KeyCode.W))
             {
                 randSound = Random.Range(0, 2);
 
@@ -109,12 +109,12 @@ public class PlayerController : MonoBehaviour
                 usedSound = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) && addedJumpNum > 0)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && addedJumpNum > 0 || Input.GetKeyDown(KeyCode.W) && addedJumpNum > 0)
             {
                 RigidB2D.velocity = Vector2.up * jumpHeight;
                 addedJumpNum--;
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow) && addedJumpNum == 0 && OnFloor == true)
+            else if (Input.GetKeyDown(KeyCode.UpArrow) && addedJumpNum == 0 && OnFloor == true || Input.GetKeyDown(KeyCode.W) && addedJumpNum == 0 && OnFloor == true)
             {
                 RigidB2D.velocity = Vector2.up * jumpHeight;
 

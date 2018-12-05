@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour {
     //This sound manager was found in a youtube tutorial by Alexander Zotov. 
     //I've put in all my own sounds and have called them from different scripts when necessary.
 
-    public static AudioClip ghostHit, bulletHits, enemyDamaged1, enemyDamaged2, enemyDamaged3, enemyDies, jump1, jump2, jump3, playerDies, shootBullet, takeDamage;
+    public static AudioClip ghostHit, bulletHits, enemyDamaged1, enemyDamaged2, enemyDamaged3, enemyDies, enemyDies2, enemyDies3, jump1, jump2, jump3, playerDies, shootBullet, shootBullet2, shootBullet3, takeDamage;
     static AudioSource source;
 
 	// Use this for initialization
@@ -20,11 +20,15 @@ public class SoundManager : MonoBehaviour {
         enemyDamaged1 = Resources.Load<AudioClip>("Enemy Damaged 1");
         enemyDamaged2 = Resources.Load<AudioClip>("Enemy Damaged 2");
         enemyDamaged3 = Resources.Load<AudioClip>("Enemy Damaged 3");
+        enemyDies3 = Resources.Load<AudioClip>("Enemy Dies 3");
+        enemyDies2 = Resources.Load<AudioClip>("Enemy Dies 2");
         enemyDies = Resources.Load<AudioClip>("Enemy Dies");
         jump1 = Resources.Load<AudioClip>("Jump 1");
         jump2 = Resources.Load<AudioClip>("Jump 2 new");
         jump3 = Resources.Load<AudioClip>("Jump 2");
         playerDies = Resources.Load<AudioClip>("player dies");
+        shootBullet3 = Resources.Load<AudioClip>("Shoot Bullet 3");
+        shootBullet2 = Resources.Load<AudioClip>("Shoot Bullet 2");
         shootBullet = Resources.Load<AudioClip>("Shoot Bullet");
         takeDamage = Resources.Load<AudioClip>("Take Damage");
 
@@ -53,6 +57,12 @@ public class SoundManager : MonoBehaviour {
             case "Enemy Damaged 3":
                 source.PlayOneShot(enemyDamaged3);
                 break;
+            case "Enemy Dies 3":
+                source.PlayOneShot(enemyDies3);
+                break;
+            case "Enemy Dies 2":
+                source.PlayOneShot(enemyDies2);
+                break;
             case "Enemy Dies":
                 source.PlayOneShot(enemyDies);
                 break;
@@ -67,6 +77,12 @@ public class SoundManager : MonoBehaviour {
                 break;
             case "player dies":
                 source.PlayOneShot(playerDies);
+                break;
+            case "Shoot Bullet 3":
+                source.PlayOneShot(shootBullet3);
+                break;
+            case "Shoot Bullet 2":
+                source.PlayOneShot(shootBullet2);
                 break;
             case "Shoot Bullet":
                 source.PlayOneShot(shootBullet);

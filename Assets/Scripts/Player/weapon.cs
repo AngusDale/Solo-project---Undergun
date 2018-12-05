@@ -12,6 +12,8 @@ public class weapon : MonoBehaviour {
     public float fireRate;
     private float nextFire = 0f;
 
+    int num;
+
     public Animator animator;
     // Update is called once per frame
     void Update () {
@@ -31,5 +33,15 @@ public class weapon : MonoBehaviour {
         animator.SetTrigger("Shoot");
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         //print(bulletsFired);
+        BulletShot();
+    }
+
+    void BulletShot()
+    {
+        num = Random.Range(0, 3);
+
+        if (num == 0) { SoundManager.PlayAudio("Shoot Bullet"); }
+        else if (num == 1) { SoundManager.PlayAudio("Shoot Bullet 2"); }
+        else if (num == 2) { SoundManager.PlayAudio("Shoot Bullet 3"); }
     }
 }

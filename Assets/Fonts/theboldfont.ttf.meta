@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de03349e22207944d8f7302da6030a8f
+guid: d273c9afce900b149819e82d31262859
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Cocogoose
+  fontName: The Bold Font
   fontNames:
-  - Cocogoose
+  - The Bold Font
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

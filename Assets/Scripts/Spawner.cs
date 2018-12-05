@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour {
     public GameObject SEnemy;
     public GameObject MEnemy;
     public GameObject LEnemy;
-    public Transform spawnPoint3, spawnPoint4, spawnPoint5, spawnPoint6, spawnPoint7;
+    public Transform spawnPoint1, spawnPoint2, spawnPoint3, spawnPoint6;
     public bool spawning = true;    
     int enemyNumber = 0;
     private float enemyInterval = 1;
@@ -83,32 +83,29 @@ public class Spawner : MonoBehaviour {
     {
         //I'm using a random number generator to randomly choose a spawner in which to spawn an enemy at. 
                 
-        spawner = Random.Range(0, 5);
-        if      (spawner == 0) { Instantiate(SEnemy, spawnPoint3.position, spawnPoint3.rotation); }
-        else if (spawner == 1) { Instantiate(SEnemy, spawnPoint4.position, spawnPoint4.rotation); }
-        else if (spawner == 2) { Instantiate(SEnemy, spawnPoint5.position, spawnPoint5.rotation); }
+        spawner = Random.Range(0, 4);
+        if      (spawner == 0) { Instantiate(SEnemy, spawnPoint1.position, spawnPoint1.rotation); }
+        else if (spawner == 1) { Instantiate(SEnemy, spawnPoint2.position, spawnPoint2.rotation); }
+        else if (spawner == 2) { Instantiate(SEnemy, spawnPoint3.position, spawnPoint3.rotation); }
         else if (spawner == 3) { Instantiate(SEnemy, spawnPoint6.position, spawnPoint6.rotation); }
-        else if (spawner == 4) { Instantiate(SEnemy, spawnPoint7.position, spawnPoint7.rotation); }
     }
 
     void SpawnMedium()
     {
-        spawner = Random.Range(0, 5);
-        if      (spawner == 0) { Instantiate(MEnemy, spawnPoint3.position, spawnPoint3.rotation); }
-        else if (spawner == 1) { Instantiate(MEnemy, spawnPoint4.position, spawnPoint4.rotation); }
-        else if (spawner == 2) { Instantiate(MEnemy, spawnPoint5.position, spawnPoint5.rotation); }
+        spawner = Random.Range(0, 4);
+        if      (spawner == 0) { Instantiate(MEnemy, spawnPoint1.position, spawnPoint1.rotation); }
+        else if (spawner == 1) { Instantiate(MEnemy, spawnPoint2.position, spawnPoint2.rotation); }
+        else if (spawner == 2) { Instantiate(MEnemy, spawnPoint3.position, spawnPoint3.rotation); }
         else if (spawner == 3) { Instantiate(MEnemy, spawnPoint6.position, spawnPoint6.rotation); }
-        else if (spawner == 4) { Instantiate(MEnemy, spawnPoint7.position, spawnPoint7.rotation); }
     }
 
     void SpawnLarge()
     {
-        spawner = Random.Range(0, 5);
-        if      (spawner == 0) { Instantiate(LEnemy, spawnPoint3.position, spawnPoint3.rotation); }
-        else if (spawner == 1) { Instantiate(LEnemy, spawnPoint4.position, spawnPoint4.rotation); }
-        else if (spawner == 2) { Instantiate(LEnemy, spawnPoint5.position, spawnPoint5.rotation); }
+        spawner = Random.Range(0, 4);
+        if      (spawner == 0) { Instantiate(LEnemy, spawnPoint1.position, spawnPoint1.rotation); }
+        else if (spawner == 1) { Instantiate(LEnemy, spawnPoint2.position, spawnPoint2.rotation); }
+        else if (spawner == 2) { Instantiate(LEnemy, spawnPoint3.position, spawnPoint3.rotation); }
         else if (spawner == 3) { Instantiate(LEnemy, spawnPoint6.position, spawnPoint6.rotation); }
-        else if (spawner == 4) { Instantiate(LEnemy, spawnPoint7.position, spawnPoint7.rotation); }
     }
     
 }
