@@ -24,8 +24,9 @@ GameObject:
   - component: {fileID: 114117911291215386}
   - component: {fileID: 114058207966725222}
   - component: {fileID: 61828600589076468}
+  - component: {fileID: 95515278635235986}
   m_Layer: 13
-  m_Name: Large Enemy 1
+  m_Name: Large Enemy
   m_TagString: LEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,6 +145,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8235503, y: 1.8411412}
   m_EdgeRadius: 0
+--- !u!95 &95515278635235986
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065510080174860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 852a98bb2fd0ff74794d4a90464478ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114058207966725222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +183,7 @@ MonoBehaviour:
   spawnParticles: {fileID: 1867074844476470, guid: 44fbdad5fde5c584a910fb12fba1e1a6,
     type: 2}
   shakeScreen: 1
+  animator: {fileID: 95515278635235986}
 --- !u!114 &114117911291215386
 MonoBehaviour:
   m_ObjectHideFlags: 1

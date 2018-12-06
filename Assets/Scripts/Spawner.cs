@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour {
     public GameObject LEnemy;
     public Transform spawnPoint1, spawnPoint2, spawnPoint3, spawnPoint6;
     public bool spawning = true;    
-    int enemyNumber = 0;
+    int enemysSpawned = 0;
     private float enemyInterval = 1;
     int spawner = 0;
     int enemySize;
@@ -27,18 +27,24 @@ public class Spawner : MonoBehaviour {
 
     public float primarySpawnRate = 1.5f;
     public float secondarySpawnRate = 0.75f;
+    public float tertiarySpawnRate = 0.5f;
+    float nextEnemy = 0f;
     
-    public int waveSize = 30;
+    public int waveSize;
     int changeRate;
+    int changeRate2;
 
     private void Start()
     {
-        changeRate = waveSize / 2;
+        changeRate = waveSize / 3;
+        changeRate2 = changeRate * 2;
+
+        print(changeRate + " " + changeRate2);
     }
 
     void Update ()
     {
-        if (spawning == true && enemyNumber < waveSize)
+        if (spawning == true && enemysSpawned < waveSize)
         {
             SpawnWave();
         }
@@ -49,33 +55,42 @@ public class Spawner : MonoBehaviour {
     //in order to create a very simple negative feedback loop. I.e. if the player is doing better, the game gets harder.
     void SpawnWave()
     {
-        enemySize = Random.Range(0, 15);
         //print(enemySize);
-        if (enemyInterval <= 0 && enemyNumber < waveSize)
+        if (Time.time > nextEnemy && enemysSpawned < waveSize)
         {
-            if     (enemySize == 0)                 { SpawnLarge(); }
-            else if(enemySize > 0 && enemySize < 4) { SpawnMedium(); }
-            else if(enemySize >= 4)                 { SpawnSmall(); }
-            
-            enemyNumber++;
-            if (enemyNumber < changeRate)
+            nextEnemy = Time.time + enemyInterval;
+            ChooseEnemy();
+
+            enemysSpawned++;
+            if (enemysSpawned <= changeRate)
             {
                 enemyInterval = primarySpawnRate;
+                print("Enemy Spawned 1");
             }
-            else if(enemyNumber >= changeRate)
+            else if (enemysSpawned > changeRate && enemysSpawned <= changeRate2)
             {
-               enemyInterval = secondarySpawnRate;
-            } 
+                enemyInterval = secondarySpawnRate;
+                print("Enemy Spawned 2");
+            }
+            else if (enemysSpawned > changeRate2)
+            {
+                enemyInterval = tertiarySpawnRate;
+                print("Enemy Spawned 3");
+            }
 
-            //print("Enemy Interval: " + enemyInterval);
-            //print("Enemy Spawned");
-        }
-        else
-        {
-            enemyInterval -= Time.deltaTime;
-        }
+            print("Enemy Interval: " + enemyInterval);
+            print("Enemy Spawned");
+        }          
+            
+            print(enemyInterval);
+       }
 
-       
+    void ChooseEnemy()
+    {
+        enemySize = Random.Range(0, 15);
+        if (enemySize == 0) { SpawnLarge(); }
+        else if (enemySize > 0 && enemySize < 4) { SpawnMedium(); }
+        else if (enemySize >= 4) { SpawnSmall(); }
     }
     
     

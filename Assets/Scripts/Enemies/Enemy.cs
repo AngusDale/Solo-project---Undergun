@@ -45,7 +45,8 @@ public class Enemy : MonoBehaviour
         else
         {
             DamagedSound();
-            animator.SetTrigger("Damage");
+            if (gameObject.tag == "LEnemy" || gameObject.tag == "MEnemy") { animator.SetTrigger("Damaged"); }
+            
         }
     }
 
@@ -71,34 +72,16 @@ public class Enemy : MonoBehaviour
     {
         int damaged = Random.Range(0, 3);
 
-        if (damaged == 0)
-        {
-            SoundManager.PlayAudio("Enemy Damaged 1");
-        }
-        else if (damaged == 1)
-        {
-            SoundManager.PlayAudio("Enemy Damaged 2");
-        }
-        else if (damaged == 2)
-        {
-            SoundManager.PlayAudio("Enemy Damaged 3");
-        }
+        if (damaged == 0){ SoundManager.PlayAudio("Enemy Damaged 1"); }
+        else if (damaged == 1) { SoundManager.PlayAudio("Enemy Damaged 2"); }
+        else if (damaged == 2) { SoundManager.PlayAudio("Enemy Damaged 3"); }
     }
 
     void DeathSound()
     {
-        if (gameObject.tag == "Enemy")
-        {
-            SoundManager.PlayAudio("Enemy Dies");
-        }
-        else if (gameObject.tag == "MEnemy")
-        {
-            SoundManager.PlayAudio("Enemy Dies 2");
-        }
-        else if (gameObject.tag == "LEnemy")
-        {
-            SoundManager.PlayAudio("Enemy Dies 3");
-        }
+        if (gameObject.tag == "Enemy") { SoundManager.PlayAudio("Enemy Dies"); }
+        else if (gameObject.tag == "MEnemy") { SoundManager.PlayAudio("Enemy Dies 2"); }
+        else if (gameObject.tag == "LEnemy") { SoundManager.PlayAudio("Enemy Dies 3"); }
     }
 }
 
