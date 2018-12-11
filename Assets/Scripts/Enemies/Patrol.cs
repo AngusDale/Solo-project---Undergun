@@ -10,9 +10,12 @@ public class Patrol : MonoBehaviour {
 
     public float enemySpeed;
 
+    //private Rigidbody2D RigidB2D;
+
     //On start it is randomised as to which direction the enemy will start moving in.
     private void Start()
     {
+        //RigidB2D = GetComponent<Rigidbody2D>();
         if (Random.Range(0, 2) == 0)
         {
             ChangeDirection();
@@ -25,6 +28,13 @@ public class Patrol : MonoBehaviour {
     {
         transform.Translate(Vector2.right * enemySpeed * Time.deltaTime);        
     }
+
+    /*void FixedUpdate()
+    {
+        Vector2 enemyVelocity = RigidB2D.velocity;
+        enemyVelocity = enemySpeed;
+        RigidB2D.velocity = enemySpeed;
+    }*/
 
     //If the enemy collides with a player, another enemy or a wall, they will change direction.
     void OnCollisionEnter2D(Collision2D collision)

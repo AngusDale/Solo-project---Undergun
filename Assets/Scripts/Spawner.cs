@@ -15,12 +15,14 @@ public class Spawner : MonoBehaviour {
     public GameObject SEnemy;
     public GameObject MEnemy;
     public GameObject LEnemy;
-    public Transform spawnPoint1, spawnPoint2, spawnPoint3, spawnPoint6;
-    public bool spawning = true;    
-    int enemysSpawned = 0;
-    private float enemyInterval = 1;
-    int spawner = 0;
-    int enemySize;
+    public GameObject enemiesLeftGO;
+
+    public int waveSize;
+    private int enemysSpawned = 0;
+    private int spawner = 0;
+    private int enemySize;
+    private int changeRate;
+    private int changeRate2;
 
     /*PrimarySpawnRate is the spawnrate for the first half of the wave. SecondarySpawnRate is the spawnrate for the second half of the wave. changeRate is the trigger for the spawn
      * rate to change and will always be a third of the way through an enemy wave. Wave size is the amount of enemies total.*/
@@ -28,18 +30,19 @@ public class Spawner : MonoBehaviour {
     public float primarySpawnRate = 1.5f;
     public float secondarySpawnRate = 0.75f;
     public float tertiarySpawnRate = 0.5f;
-    float nextEnemy = 0f;
-    
-    public int waveSize;
-    int changeRate;
-    int changeRate2;
+    private float enemyInterval = 1;
+    private float nextEnemy = 0f;
+
+    public Transform spawnPoint1, spawnPoint2, spawnPoint3, spawnPoint6;
+
+    public bool spawning = true;
 
     private void Start()
     {
         changeRate = waveSize / 3;
         changeRate2 = changeRate * 2;
 
-        print(changeRate + " " + changeRate2);
+        //print(changeRate + " " + changeRate2);
     }
 
     void Update ()
@@ -65,7 +68,7 @@ public class Spawner : MonoBehaviour {
             if (enemysSpawned <= changeRate)
             {
                 enemyInterval = primarySpawnRate;
-                print("Enemy Spawned 1");
+                //print("Enemy Spawned 1");
             }
             else if (enemysSpawned > changeRate && enemysSpawned <= changeRate2)
             {
@@ -78,11 +81,11 @@ public class Spawner : MonoBehaviour {
                 print("Enemy Spawned 3");
             }
 
-            print("Enemy Interval: " + enemyInterval);
-            print("Enemy Spawned");
+            //print("Enemy Interval: " + enemyInterval);
+            //print("Enemy Spawned");
         }          
             
-            print(enemyInterval);
+            //print(enemyInterval);
        }
 
     void ChooseEnemy()

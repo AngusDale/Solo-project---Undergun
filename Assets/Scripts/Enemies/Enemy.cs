@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
 
     public Animator animator;
 
+    private Rigidbody2D RigidB2D;
+
     void Start()
     {
         /*On start I am instatiating the spawn particles and setting the health to a random value between the HealthMin and max values that are 
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour
         Instantiate(spawnParticles, transform.position, transform.rotation);
         health = Random.Range(healthMin, healthMax + 1);
         camShake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        RigidB2D = GetComponent<Rigidbody2D>();
     }
 
     //This function will deduct 1 from the enemy's health. If that causes health to equal 0 then the enemy will die. Else it will play the 
@@ -40,6 +43,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            FindObjectOfType<EnemiesRemaining>().ChangeText();
             KillEnemy();
         }
         else
